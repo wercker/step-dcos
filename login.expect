@@ -1,0 +1,8 @@
+#!/usr/bin/env expect -f
+
+set bin [lindex $argv 0]
+spawn $bin auth login
+expect "Enter authentication token:"
+send "$env(WERCKER_DCOS_TOKEN)\r"
+expect "Login successful!"
+expect eof

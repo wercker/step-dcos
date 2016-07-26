@@ -1,0 +1,17 @@
+name: dcos
+version: 2.1.0
+description: Step to run dcos-cli
+keywords:
+  - dcos
+  - mesosphere
+properties:
+  token:
+    type: string
+    required: false
+  debug:
+    type: string
+    required: false
+    default: "false"
+  raw-args:
+    type: string
+    required: false
