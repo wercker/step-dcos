@@ -5,7 +5,8 @@ set -e
 main() {
   display_version
 
-  expect -f login.expect dcos
+  DCOS="${WERCKER_STEP_ROOT}/venv/bin/dcos"
+  expect -f $WERCKER_STEP_ROOT/login.expect $DCOS
 
   if [ -z "$WERCKER_DCOS_COMMAND" ]; then
     fail "wercker-dcos: command argument cannot be empty"
@@ -18,7 +19,7 @@ main() {
     info "dcos $cmd"
   fi
 
-  eval "$WERCKER_STEP_ROOT"/dcos "$cmd"
+  eval "$DCOS" "$cmd"
 }
 
 display_version() {
