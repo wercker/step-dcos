@@ -1,5 +1,5 @@
 name: dcos
-version: 3.0.0
+version: 3.0.1
 summary: Step to run dcos-cli
 tags:
   - dcos
